@@ -1,10 +1,10 @@
 <!DOCTYPE html>
-<html lang="es">
+<html lang="es" class="scroll-smooth">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Clínica Dental Dra. Ana Guisella Cruz</title>
-    <!-- Tailwind CSS para un diseño moderno y responsivo -->
+    <title>Clínica Dental Dra. Ana Guisella Cruz | Cirujana Dentista UCR</title>
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com"></script>
     <script>
         tailwind.config = {
@@ -12,7 +12,9 @@
                 extend: {
                     colors: {
                         tealCustom: '#0E7C7B',
+                        tealDark: '#0A5C5B',
                         mintCustom: '#4FD1C5',
+                        mintLight: '#E6FFFA',
                         bgLight: '#F8FAFC',
                         textDark: '#1E293B'
                     }
@@ -22,116 +24,347 @@
     </script>
     <!-- FontAwesome para iconos -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+    </style>
 </head>
-<body class="bg-bgLight text-textDark font-sans antialiased">
+<body class="bg-bgLight text-textDark antialiased selection:bg-mintCustom selection:text-white">
 
-    <!-- BARRA DE NAVEGACIÓN -->
-    <header class="bg-white shadow-sm sticky top-0 z-50">
-        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <i class="fa-solid fa-tooth text-tealCustom text-2xl"></i>
-                <span class="font-bold text-lg md:text-xl text-tealCustom">Dra. Ana Guisella Cruz</span>
+    <!-- BARRA SUPERIOR DE CONTACTO -->
+    <div class="bg-tealDark text-white text-xs py-2 px-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center">
+            <div class="flex items-center gap-4">
+                <span><i class="fa-solid fa-graduation-cap text-mintCustom mr-1"></i> Cirujana Dentista - UCR</span>
+                <span class="hidden md:inline"><i class="fa-solid fa-clock text-mintCustom mr-1"></i> Citas previas disponibles</span>
             </div>
-            <nav class="hidden md:flex space-x-6 text-sm font-medium">
+            <a href="https://wa.me/50684138413?text=Hola%20Dra.%20Ana%20Guisella%2C%20quisiera%20consultar%20por%20disponibilidad%20de%20citas." target="_blank" class="hover:text-mintCustom transition flex items-center gap-1 font-semibold">
+                <i class="fa-brands fa-whatsapp text-sm"></i> +506 8413-8413
+            </a>
+        </div>
+    </div>
+
+    <!-- NAVEGACIÓN PRINCIPAL -->
+    <header class="bg-white/90 backdrop-blur-md shadow-sm sticky top-0 z-40 border-b border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 py-4 flex justify-between items-center">
+            <a href="#" class="flex items-center gap-3">
+                <div class="w-10 h-10 rounded-xl bg-tealCustom text-white flex items-center justify-center text-xl shadow-md">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <div>
+                    <span class="font-extrabold text-lg text-tealCustom block leading-tight">Clínica Dental</span>
+                    <span class="text-xs font-semibold text-gray-500 uppercase tracking-wider">Dra. Ana Guisella Cruz</span>
+                </div>
+            </a>
+            
+            <nav class="hidden lg:flex items-center space-x-8 text-sm font-semibold text-gray-600">
+                <a href="#inicio" class="hover:text-tealCustom transition">Inicio</a>
                 <a href="#servicios" class="hover:text-tealCustom transition">Servicios</a>
                 <a href="#instalaciones" class="hover:text-tealCustom transition">Instalaciones</a>
-                <a href="#pagos" class="hover:text-tealCustom transition">Formas de Pago</a>
                 <a href="#convenios" class="hover:text-tealCustom transition">Convenios</a>
+                <a href="#pagos" class="hover:text-tealCustom transition">Formas de Pago</a>
                 <a href="#faq" class="hover:text-tealCustom transition">Preguntas Frecuentes</a>
             </nav>
-            <a href="https://wa.me/506XXXXXXXX?text=Hola%2C%20deseo%20agendar%20una%20cita%20en%20la%20clínica." target="_blank" class="bg-tealCustom text-white px-4 py-2 rounded-full text-sm font-semibold shadow hover:bg-opacity-90 transition flex items-center gap-2">
-                <i class="fa-brands fa-whatsapp text-lg"></i> Agendar Cita
+
+            <a href="https://wa.me/50684138413?text=Hola%20Dra.%20Ana%20Guisella%2C%20me%20gustar%C3%ADa%20agendar%20una%20cita." target="_blank" class="bg-tealCustom hover:bg-tealDark text-white px-5 py-2.5 rounded-full text-sm font-bold shadow-md hover:shadow-lg transition flex items-center gap-2">
+                <i class="fa-brands fa-whatsapp text-base"></i>
+                <span>Agendar Cita</span>
             </a>
         </div>
     </header>
 
-    <!-- SECCIÓN PRINCIPAL (HERO) -->
-    <section class="bg-gradient-to-b from-tealCustom/10 to-bgLight py-16 md:py-24">
-        <div class="max-w-7xl mx-auto px-4 text-center">
-            <span class="bg-tealCustom/20 text-tealCustom text-xs md:text-sm font-bold px-3 py-1 rounded-full uppercase tracking-wider">Cirujana Dentista - UCR</span>
-            <h1 class="text-3xl md:text-5xl font-extrabold text-textDark mt-4 mb-4">Haz que tu sonrisa cambie tu vida</h1>
-            <p class="text-lg md:text-xl text-gray-600 max-w-2xl mx-auto mb-8">Comienza por cuidarla con la mejor tecnología, experiencia y un trato humano especializado.</p>
-            <div class="flex justify-center gap-4 flex-wrap">
-                <a href="https://wa.me/506XXXXXXXX?text=Hola%2C%20deseo%20agendar%20una%20cita%20en%20la%20clínica." target="_blank" class="bg-tealCustom text-white px-6 py-3 rounded-xl font-bold shadow-lg hover:bg-opacity-90 transition flex items-center gap-2">
-                    <i class="fa-brands fa-whatsapp text-xl"></i> Agendar por WhatsApp
-                </a>
-                <a href="#servicios" class="bg-white border border-tealCustom text-tealCustom px-6 py-3 rounded-xl font-bold shadow hover:bg-tealCustom/5 transition">
-                    Ver Tratamientos
-                </a>
+    <!-- SECCIÓN HERO / PRINCIPAL -->
+    <section id="inicio" class="relative overflow-hidden bg-gradient-to-br from-mintLight/50 via-bgLight to-white py-20 lg:py-28">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+            <div class="lg:col-span-7 text-center lg:text-left">
+                <div class="inline-flex items-center gap-2 bg-white border border-tealCustom/20 shadow-sm px-4 py-1.5 rounded-full text-xs font-bold text-tealCustom mb-6">
+                    <i class="fa-solid fa-award text-tealCustom"></i> Excelencia y Calidad en Salud Dental
+                </div>
+                <h1 class="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-textDark tracking-tight leading-tight mb-6">
+                    Haz que tu sonrisa <span class="text-tealCustom underline decoration-mintCustom decoration-4">cambie tu vida</span>.
+                </h1>
+                <p class="text-lg text-gray-600 max-w-2xl mx-auto lg:mx-0 mb-8 leading-relaxed">
+                    Comienza por cuidarla. Te ofrecemos atención odontológica integral con la experiencia de la <strong>Dra. Ana Guisella Cruz</strong> (Cirujana Dentista graduada de la UCR), combinando tecnología moderna y un trato humano y personalizado.
+                </p>
+                <div class="flex flex-col sm:flex-row justify-center lg:justify-start gap-4">
+                    <a href="https://wa.me/50684138413?text=Hola%20Dra.%20Ana%20Guisella%2C%20quisiera%20agendar%20una%20valoraci%C3%B3n." target="_blank" class="bg-tealCustom hover:bg-tealDark text-white px-8 py-4 rounded-2xl font-bold shadow-lg hover:shadow-xl transition flex items-center justify-center gap-3 text-base">
+                        <i class="fa-brands fa-whatsapp text-2xl"></i>
+                        <span>Agendar Valoración</span>
+                    </a>
+                    <a href="#servicios" class="bg-white border-2 border-gray-200 hover:border-tealCustom text-textDark hover:text-tealCustom px-8 py-4 rounded-2xl font-bold transition flex items-center justify-center gap-2 text-base">
+                        <span>Ver Tratamientos</span>
+                        <i class="fa-solid fa-arrow-right text-sm"></i>
+                    </a>
+                </div>
+            </div>
+            
+            <div class="lg:col-span-5 flex justify-center">
+                <div class="relative w-full max-w-md">
+                    <!-- Tarjeta Informativa Flotante -->
+                    <div class="bg-white p-8 rounded-3xl shadow-xl border border-gray-100 text-center relative z-10">
+                        <div class="w-20 h-20 bg-mintLight text-tealCustom rounded-full flex items-center justify-center text-3xl mx-auto mb-4 border-2 border-mintCustom">
+                            <i class="fa-solid fa-user-doctor"></i>
+                        </div>
+                        <h3 class="font-extrabold text-xl text-textDark">Dra. Ana Guisella Cruz</h3>
+                        <p class="text-xs font-bold text-tealCustom uppercase tracking-widest mt-1">Cirujana Dentista - UCR</p>
+                        <p class="text-sm text-gray-500 mt-3 leading-relaxed">
+                            Comprometida con la salud bucodental de sus pacientes, ofreciendo diagnósticos precisos y planes de tratamiento a la medida.
+                        </p>
+                        <div class="mt-6 pt-6 border-t border-gray-100 grid grid-cols-2 gap-4 text-center">
+                            <div>
+                                <span class="block text-2xl font-extrabold text-tealCustom">UCR</span>
+                                <span class="text-xs text-gray-500 font-medium">Formación Académica</span>
+                            </div>
+                            <div>
+                                <span class="block text-2xl font-extrabold text-tealCustom">100%</span>
+                                <span class="text-xs text-gray-500 font-medium">Atención Personalizada</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
 
     <!-- SECCIÓN DE SERVICIOS -->
-    <section id="servicios" class="py-16 max-w-7xl mx-auto px-4">
-        <div class="text-center mb-12">
-            <h2 class="text-2xl md:text-3xl font-bold text-tealCustom">Nuestros Servicios</h2>
-            <p class="text-gray-600 mt-2">Tratamientos profesionales diseñados para la salud y estética de toda la familia.</p>
+    <section id="servicios" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="text-center max-w-3xl mx-auto mb-16">
+            <span class="text-xs font-extrabold text-tealCustom uppercase tracking-widest bg-mintLight px-3 py-1 rounded-full">Tratamientos Profesionales</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-textDark mt-3">Nuestros Servicios Odontológicos</h2>
+            <p class="text-gray-600 mt-4 leading-relaxed">Ofrecemos una gama completa de especialidades para cuidar la salud, función y estética de tu boca.</p>
         </div>
-        <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-tealCustom/10 text-tealCustom rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-tooth"></i></div>
-                <h3 class="font-bold text-lg mb-2">Odontología General</h3>
-                <p class="text-gray-600 text-sm">Limpiezas profundas, calzas estéticas y prevención para mantener tus dientes sanos.</p>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+            <!-- Servicio 1 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-mintLight text-tealCustom rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-tooth"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Odontología General</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Limpiezas dentales profundas (profilaxis), calzas estéticas de resina, eliminación de caries y revisiones preventivas periódicas.
+                </p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-tealCustom/10 text-tealCustom rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-sparkles"></i></div>
-                <h3 class="font-bold text-lg mb-2">Estética Dental</h3>
-                <p class="text-gray-600 text-sm">Blanqueamientos y procedimientos orientados a resaltar la belleza natural de tu sonrisa.</p>
+
+            <!-- Servicio 2 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-mintLight text-tealCustom rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-sparkles"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Estética Dental</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Blanqueamiento dental clínico, carillas estéticas y diseño de sonrisa para lucir dientes más blancos y alineados.
+                </p>
             </div>
-            <div class="bg-white p-6 rounded-2xl shadow-sm border border-gray-100 hover:shadow-md transition">
-                <div class="w-12 h-12 bg-tealCustom/10 text-tealCustom rounded-xl flex items-center justify-center text-xl mb-4"><i class="fa-solid fa-face-smile"></i></div>
-                <h3 class="font-bold text-lg mb-2">Ortodoncia y Especialidades</h3>
-                <p class="text-gray-600 text-sm">Alineación dental, endodoncias y soluciones avanzadas con especialistas capacitados.</p>
+
+            <!-- Servicio 3 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-mintLight text-tealCustom rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-face-smile"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Ortodoncia</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Corrección y alineación de la dentadura mediante frenillos tradicionales y opciones estéticas según el caso del paciente.
+                </p>
+            </div>
+
+            <!-- Servicio 4 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-mintLight text-tealCustom rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-syringe"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Endodoncia y Cirugía</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Tratamientos de conducto para salvar piezas dentales dañadas, extracciones sencillas y de cordales con mínimo malestar.
+                </p>
+            </div>
+
+            <!-- Servicio 5 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-mintLight text-tealCustom rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-child font-bold"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Odontopediatría</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Atención dental especializada para niños con un enfoque paciente, didáctico y amigable para evitar temores.
+                </p>
+            </div>
+
+            <!-- Servicio 6 -->
+            <div class="bg-white p-8 rounded-3xl border border-gray-100 shadow-sm hover:shadow-xl hover:-translate-y-1 transition duration-300">
+                <div class="w-14 h-14 bg-mintLight text-tealCustom rounded-2xl flex items-center justify-center text-2xl mb-6">
+                    <i class="fa-solid fa-shield-halved"></i>
+                </div>
+                <h3 class="font-bold text-xl mb-3">Prótesis y Rehabilitación</h3>
+                <p class="text-gray-600 text-sm leading-relaxed mb-4">
+                    Restauración de piezas ausentes mediante prótesis fijas, removibles y coronas para devolver la funcionalidad de masticación.
+                </p>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE FORMAS DE PAGO Y CONVENIOS -->
-    <section id="pagos" class="py-16 bg-white border-y border-gray-100">
-        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-2 gap-12">
-            <div>
-                <h2 class="text-2xl font-bold text-tealCustom mb-4"><i class="fa-solid fa-wallet mr-2"></i> Formas de Pago</h2>
-                <p class="text-gray-600 mb-4">Facilitamos diferentes métodos para que puedas realizar tus tratamientos sin preocupaciones:</p>
-                <ul class="space-y-2 text-gray-700">
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mintCustom"></i> Tarjetas de crédito y débito</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mintCustom"></i> Efectivo y transferencias bancarias</li>
-                    <li class="flex items-center gap-2"><i class="fa-solid fa-check text-mintCustom"></i> Opciones de facilidades de pago</li>
-                </ul>
-            </div>
-            <div id="convenios">
-                <h2 class="text-2xl font-bold text-tealCustom mb-4"><i class="fa-solid fa-handshake mr-2"></i> Convenios Empresariales</h2>
-                <p class="text-gray-600 mb-4">Contamos con alianzas estratégicas para ofrecer beneficios y tarifas especiales a colaboradores de distintas empresas.</p>
-                <p class="text-sm text-gray-500">Consúltanos directamente por WhatsApp si tu empresa cuenta con convenio activo con nosotros.</p>
+    <!-- SECCIÓN NUESTRAS INSTALACIONES -->
+    <section id="instalaciones" class="py-20 bg-white border-y border-gray-100">
+        <div class="max-w-7xl mx-auto px-4 text-center">
+            <span class="text-xs font-extrabold text-tealCustom uppercase tracking-widest bg-mintLight px-3 py-1 rounded-full">Conoce Nuestro Espacio</span>
+            <h2 class="text-3xl sm:text-4xl font-extrabold text-textDark mt-3 mb-4">Nuestras Instalaciones</h2>
+            <p class="text-gray-600 max-w-2xl mx-auto mb-12">Un ambiente bioseguro, moderno y diseñado para que tu consulta sea una experiencia cómoda y relajante.</p>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+                <div class="bg-bgLight p-8 rounded-3xl border border-gray-100 text-center">
+                    <i class="fa-solid fa-pump-soap text-4xl text-tealCustom mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">Bioseguridad Estricta</h4>
+                    <p class="text-sm text-gray-600">Protocolos rigurosos de esterilización en todos los instrumentos y equipos.</p>
+                </div>
+                <div class="bg-bgLight p-8 rounded-3xl border border-gray-100 text-center">
+                    <i class="fa-solid fa-couch text-4xl text-tealCustom mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">Sillón Odontológico Ergonómico</h4>
+                    <p class="text-sm text-gray-600">Equipamiento diseñado para mayor confort del paciente durante el tratamiento.</p>
+                </div>
+                <div class="bg-bgLight p-8 rounded-3xl border border-gray-100 text-center">
+                    <i class="fa-solid fa-heart-pulse text-4xl text-tealCustom mb-4"></i>
+                    <h4 class="font-bold text-lg mb-2">Atención Cálida</h4>
+                    <p class="text-sm text-gray-600">Ambiente tranquilo ideal para reducir la ansiedad antes de tu consulta.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <!-- SECCIÓN DE PREGUNTAS FRECUENTES -->
-    <section id="faq" class="py-16 max-w-4xl mx-auto px-4">
-        <h2 class="text-2xl md:text-3xl font-bold text-tealCustom text-center mb-8">Preguntas Frecuentes</h2>
-        <div class="space-y-4">
-            <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 cursor-pointer">
-                <summary class="font-bold text-textDark">¿Cómo puedo agendar una cita?</summary>
-                <p class="text-gray-600 mt-2 text-sm">Puedes hacerlo de forma rápida haciendo clic en cualquiera de los botones de WhatsApp de nuestra página web.</p>
-            </details>
-            <details class="bg-white p-6 rounded-xl shadow-sm border border-gray-100 cursor-pointer">
-                <summary class="font-bold text-textDark">¿Atienden emergencias dentales?</summary>
-                <p class="text-gray-600 mt-2 text-sm">Escríbenos por WhatsApp para verificar la disponibilidad de espacio y atenderte a la mayor brevedad posible.</p>
-            </details>
+    <!-- SECCIÓN CONVENIOS Y FORMAS DE PAGO -->
+    <section id="convenios" class="py-20 max-w-7xl mx-auto px-4">
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+            
+            <!-- Convenios Empresariales -->
+            <div class="bg-gradient-to-br from-tealCustom to-tealDark text-white p-8 sm:p-10 rounded-3xl shadow-lg relative overflow-hidden">
+                <div class="relative z-10">
+                    <span class="bg-white/20 text-white text-xs font-bold px-3 py-1 rounded-full uppercase tracking-wider">Beneficios Exclusivos</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold mt-4 mb-4">Convenios Empresariales</h3>
+                    <p class="text-white/80 leading-relaxed mb-6">
+                        Ofrecemos tarifas preferenciales y condiciones especiales para colaboradores de empresas asociadas. Cuida la salud bucal de tu equipo con nuestros planes corporativos.
+                    </p>
+                    <a href="https://wa.me/50684138413?text=Hola%20Dra.%20Ana%20Guisella%2C%20quisiera%20informaci%C3%B3n%20sobre%20los%20convenios%20empresariales." target="_blank" class="inline-flex items-center gap-2 bg-white text-tealCustom hover:bg-mintLight font-bold px-6 py-3 rounded-xl transition text-sm">
+                        <i class="fa-solid fa-building"></i> Consulta por tu Convenio
+                    </a>
+                </div>
+            </div>
+
+            <!-- Formas de Pago -->
+            <div id="pagos" class="bg-white p-8 sm:p-10 rounded-3xl border border-gray-100 shadow-sm flex flex-col justify-between">
+                <div>
+                    <span class="text-xs font-extrabold text-tealCustom uppercase tracking-widest bg-mintLight px-3 py-1 rounded-full">Facilidades</span>
+                    <h3 class="text-2xl sm:text-3xl font-extrabold text-textDark mt-4 mb-4">Formas de Pago</h3>
+                    <p class="text-gray-600 leading-relaxed mb-6">
+                        Buscamos que tu tratamiento sea accesible. Aceptamos múltiples opciones para tu comodidad:
+                    </p>
+                    <div class="grid grid-cols-2 gap-4 text-sm font-semibold text-gray-700">
+                        <div class="flex items-center gap-3 bg-bgLight p-3 rounded-xl">
+                            <i class="fa-solid fa-credit-card text-tealCustom text-lg"></i>
+                            <span>Tarjetas Débito / Crédito</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-bgLight p-3 rounded-xl">
+                            <i class="fa-solid fa-money-bill-wave text-tealCustom text-lg"></i>
+                            <span>Efectivo</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-bgLight p-3 rounded-xl">
+                            <i class="fa-solid fa-mobile-screen text-tealCustom text-lg"></i>
+                            <span>Transferencia / SINPE</span>
+                        </div>
+                        <div class="flex items-center gap-3 bg-bgLight p-3 rounded-xl">
+                            <i class="fa-solid fa-hand-holding-dollar text-tealCustom text-lg"></i>
+                            <span>Planes de Pago</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- PREGUNTAS FRECUENTES -->
+    <section id="faq" class="py-20 bg-white border-t border-gray-100">
+        <div class="max-w-4xl mx-auto px-4">
+            <div class="text-center mb-12">
+                <span class="text-xs font-extrabold text-tealCustom uppercase tracking-widest bg-mintLight px-3 py-1 rounded-full">Resolvemos tus dudas</span>
+                <h2 class="text-3xl font-extrabold text-textDark mt-3">Preguntas Frecuentes</h2>
+            </div>
+
+            <div class="space-y-4">
+                <details class="bg-bgLight p-6 rounded-2xl border border-gray-100 cursor-pointer group">
+                    <summary class="font-bold text-lg text-textDark flex justify-between items-center list-none">
+                        <span>¿Cómo puedo agendar una cita de valoración?</span>
+                        <span class="text-tealCustom transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 text-sm leading-relaxed">
+                        Es sumamente sencillo: puedes hacer clic en cualquiera de los botones de WhatsApp de nuestra web o escribir directamente al <strong>+506 8413-8413</strong>. Con gusto te indicaremos los espacios disponibles.
+                    </p>
+                </details>
+
+                <details class="bg-bgLight p-6 rounded-2xl border border-gray-100 cursor-pointer group">
+                    <summary class="font-bold text-lg text-textDark flex justify-between items-center list-none">
+                        <span>¿Atienden emergencias o dolor agudo?</span>
+                        <span class="text-tealCustom transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 text-sm leading-relaxed">
+                        Sí, procuramos abrir espacio prioritario para atender casos de dolor intenso, fracturas dentales u otras emergencias. Por favor escríbenos al WhatsApp inmediatamente para coordinar.
+                    </p>
+                </details>
+
+                <details class="bg-bgLight p-6 rounded-2xl border border-gray-100 cursor-pointer group">
+                    <summary class="font-bold text-lg text-textDark flex justify-between items-center list-none">
+                        <span>¿Con qué frecuencia debo hacerme una limpieza dental?</span>
+                        <span class="text-tealCustom transition group-open:rotate-180"><i class="fa-solid fa-chevron-down"></i></span>
+                    </summary>
+                    <p class="text-gray-600 mt-4 text-sm leading-relaxed">
+                        Lo ideal es realizar una limpieza y revisión profesional cada 6 meses para prevenir la acumulación de sarro y detectar a tiempo cualquier problema dental.
+                    </p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- LLAMADO A LA ACCIÓN FINAL -->
+    <section class="py-16 bg-tealCustom text-white text-center">
+        <div class="max-w-4xl mx-auto px-4">
+            <h2 class="text-3xl font-extrabold mb-4">¿Listo para cuidar tu salud dental?</h2>
+            <p class="text-white/80 mb-8 max-w-xl mx-auto">Agenda tu cita con la Dra. Ana Guisella Cruz hoy mismo y regálate la sonrisa que te mereces.</p>
+            <a href="https://wa.me/50684138413?text=Hola%20Dra.%20Ana%20Guisella%2C%20quisiera%20agendar%20una%20cita." target="_blank" class="bg-white text-tealCustom hover:bg-mintLight px-8 py-4 rounded-2xl font-extrabold shadow-lg transition inline-flex items-center gap-3">
+                <i class="fa-brands fa-whatsapp text-2xl"></i>
+                <span>Escribir al WhatsApp (+506 8413-8413)</span>
+            </a>
         </div>
     </section>
 
     <!-- BOTÓN FLOTANTE DE WHATSAPP -->
-    <a href="https://wa.me/506XXXXXXXX?text=Hola%2C%20deseo%20agendar%20una%20cita." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-14 h-14 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
+    <a href="https://wa.me/50684138413?text=Hola%20Dra.%20Ana%20Guisella%2C%20quisiera%20agendar%20una%20cita." target="_blank" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center text-3xl shadow-2xl hover:scale-110 transition z-50">
         <i class="fa-brands fa-whatsapp"></i>
     </a>
 
     <!-- PIE DE PÁGINA -->
-    <footer class="bg-textDark text-white py-8 text-center text-sm">
-        <p class="font-bold">Clínica Dental Dra. Ana Guisella Cruz</p>
-        <p class="text-gray-400 mt-1">Cirujana Dentista - UCR</p>
-        <p class="text-gray-500 mt-4">&copy; 2026 Todos los derechos reservados.</p>
+    <footer class="bg-textDark text-white py-12 border-t border-gray-800 text-sm">
+        <div class="max-w-7xl mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div>
+                <div class="flex items-center gap-2 mb-3">
+                    <i class="fa-solid fa-tooth text-mintCustom text-xl"></i>
+                    <span class="font-bold text-base">Clínica Dental Dra. Ana Guisella Cruz</span>
+                </div>
+                <p class="text-gray-400 text-xs">Cirujana Dentista graduada de la Universidad de Costa Rica (UCR).</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-3 text-mintCustom">Contacto Rápido</h4>
+                <p class="text-gray-300 mb-1"><i class="fa-brands fa-whatsapp mr-2"></i> +506 8413-8413</p>
+                <p class="text-gray-300"><i class="fa-solid fa-envelope mr-2"></i> Consulta de citas por WhatsApp</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-3 text-mintCustom">Redes Sociales</h4>
+                <a href="https://draanaguisellacruz.wixsite.com/clinica-dental" target="_blank" class="text-gray-300 hover:text-white transition flex items-center gap-2 text-xs">
+                    <i class="fa-brands fa-facebook text-base"></i> Síguenos en Facebook
+                </a>
+            </div>
+        </div>
+        <div class="max-w-7xl mx-auto px-4 mt-8 pt-8 border-t border-gray-800 text-center text-xs text-gray-500">
+            &copy; 2026 Clínica Dental Dra. Ana Guisella Cruz. Todos los derechos reservados.
+        </div>
     </footer>
 
 </body>
